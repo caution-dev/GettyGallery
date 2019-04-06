@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YyE-PK-O5e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Getty Images-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GettyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-fn-tjz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="getty_table_cell" rowHeight="240" id="qjS-0T-aeg" customClass="GettyImageTableViewCell" customModule="GettyGallery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="240"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qjS-0T-aeg" id="Oex-fz-9gj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBo-0v-hWl">
+                                                    <rect key="frame" x="20" y="10" width="335" height="200"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-oh-BYM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="200"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="200" id="icE-7w-uCd"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IML-Al-IRW">
+                                                            <rect key="frame" x="248" y="156" width="71" height="36"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="nDk-oh-BYM" firstAttribute="top" secondItem="YBo-0v-hWl" secondAttribute="top" id="DqW-1p-2sm"/>
+                                                        <constraint firstItem="nDk-oh-BYM" firstAttribute="leading" secondItem="YBo-0v-hWl" secondAttribute="leading" id="N86-pL-E3T"/>
+                                                        <constraint firstAttribute="bottom" secondItem="nDk-oh-BYM" secondAttribute="bottom" id="Rn4-pf-wRt"/>
+                                                        <constraint firstItem="IML-Al-IRW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YBo-0v-hWl" secondAttribute="leading" constant="20" id="Ufv-wW-IQN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nDk-oh-BYM" secondAttribute="trailing" id="eoH-pU-BMt"/>
+                                                        <constraint firstItem="nDk-oh-BYM" firstAttribute="trailingMargin" secondItem="IML-Al-IRW" secondAttribute="trailing" constant="8" id="gH6-SU-ewY"/>
+                                                        <constraint firstItem="IML-Al-IRW" firstAttribute="bottom" secondItem="nDk-oh-BYM" secondAttribute="bottom" constant="-8" id="tjE-XU-flU"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YBo-0v-hWl" firstAttribute="top" secondItem="Oex-fz-9gj" secondAttribute="top" constant="10" id="EQj-DZ-5gf"/>
+                                                <constraint firstAttribute="trailing" secondItem="YBo-0v-hWl" secondAttribute="trailing" constant="20" id="Yo0-7Q-ltC"/>
+                                                <constraint firstAttribute="bottom" secondItem="YBo-0v-hWl" secondAttribute="bottom" constant="30" id="nJ1-ay-f9t"/>
+                                                <constraint firstItem="YBo-0v-hWl" firstAttribute="leading" secondItem="Oex-fz-9gj" secondAttribute="leading" constant="20" id="pcG-oR-cjZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gettyImageView" destination="nDk-oh-BYM" id="5Qf-JE-9kz"/>
+                                            <outlet property="outerView" destination="YBo-0v-hWl" id="xcw-xW-ijM"/>
+                                            <outlet property="titleLabel" destination="IML-Al-IRW" id="7Qc-ap-GHZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TG7-X2-c3P"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Yq2-Te-2PE"/>
+                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="2D6-HL-EQk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8n8-fn-tjz" secondAttribute="bottom" id="Lpo-nv-xBE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8n8-fn-tjz" secondAttribute="trailing" id="eAA-Aj-etG"/>
+                            <constraint firstItem="8n8-fn-tjz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k1r-As-bPF"/>
+                            <constraint firstItem="8n8-fn-tjz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qjn-b3-811"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Getty Images" id="TQE-hs-vlL">
+                        <barButtonItem key="rightBarButtonItem" title="viewer" id="BVG-rB-XsY">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gettyTableView" destination="8n8-fn-tjz" id="g2u-rF-7UA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="792.95352323838085"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lak-5O-mUA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YyE-PK-O5e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F5p-dA-haT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TVV-Eo-yjc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaD-dD-ou8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.59999999999999" y="792.95352323838085"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder" width="1280" height="960"/>
+    </resources>
+</document>
