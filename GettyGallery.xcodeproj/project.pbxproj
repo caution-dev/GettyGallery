@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D536B03F2258B43C00613887 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536B03E2258B43C00613887 /* URL+.swift */; };
+		D536B043225B376B00613887 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536B042225B376B00613887 /* DetailViewController.swift */; };
 		D54642492255EEB60052DE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54642482255EEB60052DE04 /* AppDelegate.swift */; };
 		D546424B2255EEB60052DE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D546424A2255EEB60052DE04 /* ViewController.swift */; };
 		D546424E2255EEB60052DE04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D546424C2255EEB60052DE04 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		D536B03E2258B43C00613887 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		D536B042225B376B00613887 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D54642452255EEB60052DE04 /* GettyGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettyGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54642482255EEB60052DE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D546424A2255EEB60052DE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				D546425D2255F41C0052DE04 /* model */,
 				D546425A2255EEF90052DE04 /* network */,
 				D54642482255EEB60052DE04 /* AppDelegate.swift */,
+				D536B042225B376B00613887 /* DetailViewController.swift */,
 				D546424A2255EEB60052DE04 /* ViewController.swift */,
 				D546424C2255EEB60052DE04 /* Main.storyboard */,
 				D546424F2255EEBA0052DE04 /* Assets.xcassets */,
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D536B043225B376B00613887 /* DetailViewController.swift in Sources */,
 				D546424B2255EEB60052DE04 /* ViewController.swift in Sources */,
 				D58C620B225737CD004473F6 /* GettyImageTableViewCell.swift in Sources */,
 				D58C62112257471B004473F6 /* ImageCache.swift in Sources */,
@@ -356,8 +360,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BKN5926VM;
 				INFOPLIST_FILE = GettyGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,8 +380,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BKN5926VM;
 				INFOPLIST_FILE = GettyGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -14,16 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let fetcher = URLFetcher()
-        fetcher.loadHTML(success: { gettyImages in
-            gettyImages[..<8].forEach({ gettyImage in
-                if let url = gettyImage.src {
-                    ImageManager.shared.fetchImage(url: url, completion: nil)
-                }
-            })
-        }, errorHandler: {
-            print("request failed")
-        })
         return true
     }
 

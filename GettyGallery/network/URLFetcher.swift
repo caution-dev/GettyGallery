@@ -12,18 +12,19 @@ class URLFetcher {
     
     private let basicURL: String = "https://www.gettyimagesgallery.com"
     
-    func loadHTML(success: @escaping ([GettyImage]) -> Void, errorHandler: @escaping ()->Void) {
+    func loadGettyImages(success: @escaping ([GettyImage]) -> Void, errorHandler: @escaping ()->Void) {
         guard let url: URL = URL(string: basicURL + "/collection/sasha/") else { preconditionFailure() }
         
         if let cachedContents = cachedResponse(forKey: url.absoluteString) {
-            success(self.mapToGettyImages(cachedContents))
+            let gettyImages = self.mapToGettyImages(cachedContents)
+            success(gettyImages)
         }
         
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
-        let session: URLSession = URLSession(configuration: .default)
-        let dataTask: URLSessionDataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+        
+        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             defer {
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -31,6 +32,7 @@ class URLFetcher {
             }
             if let error = error {
                 errorHandler()
+                print("Error Occurred!!")
                 print(error.localizedDescription)
                 return
             }
@@ -39,10 +41,9 @@ class URLFetcher {
                     return
             }
             let imageContents = self.getImageContents(htmlString)
+            let cashContents = self.cachedResponse(forKey: url.absoluteString)
             
-            if let cachedContents = self.cachedResponse(forKey: url.absoluteString),
-                cachedContents.hashValue == imageContents.hashValue {
-            } else {
+            if cashContents == nil || cashContents?.hashValue != imageContents.hashValue {
                 self.cachingResponse(forKey: url.absoluteString, contents: imageContents)
                 let gettyImages = self.mapToGettyImages(imageContents)
                 success(gettyImages)
