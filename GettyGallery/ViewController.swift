@@ -75,17 +75,13 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach {
-            if let url = gettyImages[$0.row].src {
-                ImageManager.shared.fetchImage(url: url, completion: nil)
-            }
+            ImageManager.shared.fetchImage(url: gettyImages[$0.row].src, completion: nil)
         }
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach({
-            if let url = gettyImages[$0.row].src {
-                ImageManager.shared.cancelLoadImage(url: url)
-            }
+            ImageManager.shared.cancelLoadImage(url: gettyImages[$0.row].src)
         })
     }
 }
@@ -94,11 +90,9 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let gettyImage = gettyImages[indexPath.row]
-        if let imageUrl = gettyImage.src {
-            let detailViewController = DetailViewController()
-            detailViewController.title = gettyImage.name
-            detailViewController.bind(imageUrl: imageUrl)
-            navigationController?.pushViewController(detailViewController, animated: true)
-        }
+        let detailViewController = DetailViewController()
+        detailViewController.title = gettyImage.name
+        detailViewController.bind(imageUrl: gettyImage.src)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

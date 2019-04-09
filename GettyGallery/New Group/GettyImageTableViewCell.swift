@@ -18,11 +18,9 @@ class GettyImageTableViewCell: UITableViewCell {
     func bind(source: GettyImage) {
         titleLabel.text = source.name
         imageUrl = source.src
-        if let imageUrl = source.src {
-            ImageManager.shared.fetchImage(url: imageUrl) { [weak self] image in
-                if self?.imageUrl == source.src {
-                    self?.gettyImageView.image = image
-                }
+        ImageManager.shared.fetchImage(url: source.src) { [weak self] image in
+            if self?.imageUrl == source.src {
+                self?.gettyImageView.image = image
             }
         }
     }

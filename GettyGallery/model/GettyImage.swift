@@ -9,6 +9,6 @@
 import Foundation
 
 struct GettyImage {
-    let src: URL?
+    let src: URL
     let name: String
 }
