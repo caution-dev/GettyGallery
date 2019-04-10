@@ -73,7 +73,7 @@ class URLFetcher {
         let titlePattern: String = "(?<=<h5 class=\"image-title\">)([^</]+)"
         let titles = contents.matches(for: titlePattern)
         
-        for i in 0..<imagePattern.count {
+        for i in 0..<images.count {
             // url이 유효하지 않을 경우를 제외합니다.
             if let url = URL(string: images[i]) {
                 result.append(GettyImage.init(src: url, name: titles[i]))
